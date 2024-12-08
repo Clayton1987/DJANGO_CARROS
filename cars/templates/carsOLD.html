@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Cars</title>
+</head>
+{% block content %}
+<body>
+    <h1>My Cars</h1>
+    {% for car in cars %}
+        <h3>So carro top: {{ car.model }}<h3>
+        
+    {% endfor %}
+    <p>This is a list of my cars</p>
+</body>
+{% endblock %}
+</html>

@@ -41,7 +41,9 @@ def cars_view(request):
     cars = Car.objects.all()
     search = request.GET.get('search') #informação  dode busca do ususario
     if search:
-        cars = Car.objects.filter(model__contains=search) # busca no banco com filter
+        #cars = Car.objects.filter(model__contains=search) # busca no banco com filter
+        #cars = Car.objects.filter(model__icontains=search) # busca no banco com filter igorando casesensitive
+        cars = Car.objects.filter(model__icontains=search).order_by('model') # busca no banco com filter igorando casesensitive
 
 
     #print(cars)
