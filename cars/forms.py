@@ -46,3 +46,9 @@ class CarModelForm(forms.ModelForm):
         if factory_year < 1975:
             self.add_error('factory_year', 'O ano de fabricação deve ser maior que 1975')
         return factory_year
+    
+    def clean_photo(self):
+        photo = self.cleaned_data.get('photo')
+        if not photo:
+            self.add_error('photo', 'Favor Importar uma Foto!')
+        return photo
