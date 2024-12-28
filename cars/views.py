@@ -121,3 +121,23 @@ class NewCarView(View):
         return render(request, 'new_car.html', {'new_car_form': new_car_form })
     
     
+class NewCarCreateView(CreateView):
+    model = Car
+    form_class = CarModelForm
+    template_name = 'new_car.html'
+    success_url = '/cars/'
+
+class CarDetailView(DeleteView):
+    model = Car
+    template_name = 'car_detail.html'
+
+class CarUpdateView(UpdateView):
+    model = Car
+    form_class = CarModelForm
+    template_name = 'car_update.html'
+    success_url = '/cars/'
+
+class CarDeleteView(DeleteView):
+    model = Car
+    template_name = 'car_delete.html'
+    success_url = '/cars/'
