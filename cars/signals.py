@@ -17,6 +17,8 @@ def car_inventory_update():
 @receiver(pre_save, sender=Car)
 def car_pre_save(sender, instance, **kwargs):
     if not instance.bio:
+        #ai_bio = get_car_ai_bio(instance.model, instance.brand, instance.model_year)
+        #instance.bio = ai_bio
         instance.bio = 'Nenhuma informação disponível ainda'
 
 
